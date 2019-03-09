@@ -1,0 +1,282 @@
+/********************************************************************
+	ZYPOP - HTTPS://ZYPOPWEBTEMPLATES.COM
+	FREE WEB TEMPLATES
+********************************************************************/
+
+
+/**
+This file contains the core CSS for this template.
+Set the variable values in _variables.scss 
+**/
+
+
+/** 
+Page structure and elements 
+**/
+body { 
+    background-color: $primary;	
+    font-family: $font-family;
+    color: $body-color;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+}
+body:before {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    content: '';
+    width: 100vw;
+    background-image: $background-image;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+body.left:before {
+    transform:scaleX(-1);
+}
+
+body.left.no-transform:before {
+    transform: none !important;
+}
+
+
+.wrapper {
+    width: $content-area-width;
+    float: left;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.left .wrapper {
+    float: right;
+}
+
+.container {
+    padding: $padding;
+    background-color: $primary;
+    opacity: 0.9;
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+}
+
+.left .container {
+    border-radius: 0;
+    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+}
+
+
+a {
+    color: $secondary;
+    font-weight: bold;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($secondary, 5%);
+    }
+}
+
+fieldset { 
+    margin-bottom: $spacer; 
+    display: block;
+    border-top: 1px solid #ccc;
+}
+fieldset legend { 
+    width: auto;
+    padding-right: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+table th { 
+    background-color: $secondary;
+    color: #fff;
+	border-color:darken($secondary, 15%) !important;
+	border-bottom: 1px solid darken($secondary, 15%);
+}
+
+blockquote {
+    display: block;
+    border-left: 5px solid lighten($primary, 20%);
+    padding: 0.5rem;
+	color: $body-color;
+    margin-bottom: $spacer;
+
+}
+pre code {
+}
+
+p { 
+    margin: 0 0 $spacer;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    color: lighten($body-color, 20%);
+    font-weight: bold;
+    margin: 0 0 $spacer;
+}
+
+h3 { 
+    color: lighten($secondary, 10%);
+}
+.text-center {
+    text-align: center;
+}
+.no-spacer {
+    margin-bottom: 0 !important;
+}
+
+/**
+Header 
+**/
+header {
+    padding: ($padding / 4) 0;
+    margin-bottom: ($padding / 4);
+    border-bottom: 1px solid darken($primary, 10%);
+}
+header h1 {
+	color: #666;
+    font-size: $font-size * 2.5;
+	letter-spacing: -0.2rem;
+    margin-bottom: 0;
+    line-height: $font-size * 2.5;
+}
+header h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: darken($body-color, 5%);
+}
+
+
+/**
+Footer
+**/
+footer { 
+    color: darken($primary, 15%);
+	font-size: 0.9rem;
+    text-align: center;
+    margin-top: 0;
+    padding-top: $padding / 4;
+}
+footer p { 
+    margin-bottom: 0;
+}
+footer a {
+    color: darken($primary, 20%);
+    font-weight: normal;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($primary, 30%);
+    }
+}
+
+/** 
+Social Icons
+**/
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.2em;
+}
+.social-icons a {
+    margin-right: 20px; 
+    color: lighten($body-color, 20%);
+    font-weight: normal;
+    &:hover,
+    &:focus,
+    &:active {
+        color: lighten($secondary, 5%);
+    }
+}
+.social-icons a.button.button-large {
+    font-size: 0.7em;
+}
+
+/** 
+Button
+**/
+a.button {
+    color: #fff;
+    font-weight: bold;
+    background-color: $secondary;
+    padding: 5px 15px;
+    border-radius: $border-radius / 2;
+    display: inline-block;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+        color: #fff;
+        background-color: darken($secondary, 5%);
+    }
+}
+a.button.button-large {
+    font-size: 0.8em;
+    line-height: 1.4em;
+    padding: 15px 45px;
+    border-radius: $border-radius;
+}
+
+
+/**
+Responsive
+**/
+@media screen and (max-width: 1400px) {
+    .wrapper {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 850px) {
+    .wrapper {
+        float: none;
+        width: auto;
+    }
+    .container {
+        border-radius: 0 !important;
+    } 
+}
+@media screen and (max-width: 700px) {
+    body {
+        font-size: 0.9em;
+    }
+    header h1 {
+        font-size: $font-size * 1.5;
+        letter-spacing: -0.1rem;
+        line-height: $font-size * 1.5;
+    }
+    .container {
+        padding: $padding / 2;
+    }
+    a.button.button-large {
+        padding: 9px 20px;
+    }
+}
+@media screen and (max-width: 430px) {   
+    .social-icons  a.button.button-large {
+        padding: 9px 0;
+        width: 100%;
+        margin-bottom: $spacer;
+        text-align: center;
+    }
+}
+
+
+
